@@ -1,0 +1,201 @@
+/*******
+* base
+********/
+* {
+  box-sizing: content-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body {
+  font-size: 13px;
+  line-height: 2;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-family: "SF Pro JP","SF Pro Text","Apple TP","Myriad Set Pro","SF Pro Icons","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","メイリオ","Meiryo","ＭＳ Ｐゴシック","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+h1,h2,h3,h4,h5,h6,p,div {
+  margin: 0;
+  padding: 0;
+}
+
+
+/*******
+* header
+********/
+#x {
+  display: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  color: #f5f5f7;
+  user-select: none;
+}
+.icon > a {
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: inline-block;
+  height: 44px;
+  margin-bottom: -10px;
+}
+.apple > a {
+  background-size: 16px 44px;
+  width: 16px;
+  background-image: url(img/globalnav_apple.svg);
+
+}
+.search > a {
+  background-size: 18px 88px;
+  background-position: 10px 0;
+  width: 36px;
+  background-image: url(img/globalnav_search.svg);
+}
+.bag > a {
+  background-size: 17px 44px;
+  width: 17px;
+  background-image: url(img/globalnav_bag.svg);
+
+}
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+}
+header nav li {
+  padding: 0 16px;
+}
+header nav a{
+
+  opacity: .8;
+  transition: opacity 0.2s;
+}
+header nav a:hover {
+  opacity: 1;
+}
+.appear {
+  display: none;
+}
+/*******
+* header responsive
+********/
+@media screen and (max-width: 768px) {
+  .appear {
+    display: block;
+  }
+  .disappear {
+    display: none;
+  }
+  .bread-top {
+    transform: none;
+    transition: transform .1806s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+    position: absolute;
+    z-index: 3;
+    top: 9px;
+    left: 9px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  #x:checked ~ nav .bread-top {
+    transition: transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+    transform: rotate(45deg);
+  }
+
+  .bread-crust {
+    display: block;
+    width: 17px;
+    height: 1px;
+    background: #fff;
+    border-radius: 0.5px;
+    position: absolute;
+    left: 7px;
+    top: 14px;
+    z-index: 1;
+    transform: translateY(-3px);
+    cursor: pointer;
+    transition: transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84);
+  }
+  #x:checked ~ nav .bread-crust {
+    transition: transform .1806s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+    transform: none;
+  }
+
+  .bread-bottom {
+    position: absolute;
+    z-index: 3;
+    top: 9px;
+    left: 9px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform .1806s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+    transform: none;
+  }
+  #x:checked ~ nav .bread-bottom {
+    transition: transform .3192s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+    transform: rotate(-45deg);
+  }
+
+  .bread-crust-bottom {
+    bottom: 14px;
+    transform: translateY(3px);
+    transition: transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84);
+    display: block;
+    width: 17px;
+    height: 1px;
+    background: #fff;
+    border-radius: 0.5px;
+    position: absolute;
+    left: 7px;
+    z-index: 1;
+    cursor: pointer;
+  }
+  #x:checked ~ nav .bread-crust-bottom {
+    transition: transform .1806s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+    transform: none;
+  }
+  nav {
+    height: 42.8px;
+    background-color: transparent;
+    transition: height 0.3s, background-color 0.3s;
+  }
+  #x:checked ~ nav {
+    height: 100vh;
+    background-color: #111111;
+    transition: height .2596s cubic-bezier(0.52, 0.16, 0.52, 0.84),
+      background-color .2596s cubic-bezier(0.52, 0.16, 0.52, 0.84);
+  }
+}
+
+
+
+
+
+/***********
+* reopen
+***********/
+#reopen {
+  margin-top: 62px;
+  margin-bottom: 18px;
+  font-size: 10.5px;
+  text-align: center;
+  line-height: 1.2;
+}
+#dummy {
+  background-color: #111111;
+}
